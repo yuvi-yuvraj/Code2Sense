@@ -1,9 +1,25 @@
 const express = require('express');
-app = express();
+const dotenv = require('dotenv');
+dotenv.config({path: './config.env'});
+const mongoose = require('mongoose');
+const cors = require('cors');
+const app = new express();
+const PORT = process.env.PORT ;
 
+require('./db/conn');
+
+app.use(cors());
 app.use(express.json());
 
+const consoleURL = (req, res, next)=>{
+    console.log(`User at URL : localhost:${PORT}${req.url}`);
+    next();
+}
 
-app.listen(5000, () => {
-  console.log('Server is running on port 5000');
+app.get('/', consoleURL,(req, res) => {
+    res.send('hello world');
+})
+
+app.listen(PORT, () => {
+  console.log(`localhost:${PORT}`);
 });
