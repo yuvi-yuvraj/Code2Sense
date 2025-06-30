@@ -7,6 +7,7 @@ import Header from "./components/Screens/Header";
 import Homepage from "./components/Screens/Homepage";
 import Login from "./components/Screens/Login";
 import Logout from "./components/Screens/Logout";
+import Errorpage from "./components/Screens/Errorpage";
 
 export const UsedContext = createContext();
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/register" element={<Register/>} />
           <Route path='/login' element={<Login/>}/>
           <Route path='/logout' element={<Logout/>}/>
+          <Route path='*' element={<Errorpage/>}/>
         </Routes>
       </BrowserRouter>
     </UsedContext.Provider>
