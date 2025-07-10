@@ -1,5 +1,7 @@
+import CodingPage from "../HomepageScreen/CodingPage"
 import Footer from "../HomepageScreen/Footer"
-import LandingPage from "../HomepageScreen/Landingpage"
+import LandingPage from "../HomepageScreen/LandingPage"
+
 
 function Homepage() {
     return (

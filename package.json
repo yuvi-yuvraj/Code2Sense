@@ -16,6 +16,8 @@
     "concurrently": "^9.1.2"
   },
   "dependencies": {
-    "@splinetool/runtime": "^1.10.13"
+    "@splinetool/runtime": "^1.10.13",
+    "react-speech-recognition": "^4.0.1",
+    "regenerator-runtime": "^0.14.1"
   }
 }
