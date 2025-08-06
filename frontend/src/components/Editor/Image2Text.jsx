@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { toast } from "react-hot-toast"
-import code from "../../assets/code.png"
 import Tesseract from 'tesseract.js';
 
 const Image2Text = () => {

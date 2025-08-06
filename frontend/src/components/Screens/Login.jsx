@@ -42,7 +42,7 @@ function Login() {
     else{
       dispatch({type:'USER',payload:true});
       toast.success("Login Successfully");
-      history2('/');
+      history2('/coding');
     }
   }
 

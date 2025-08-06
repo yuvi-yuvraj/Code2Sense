@@ -14,6 +14,11 @@ function Header() {
                 className="text-zinc-700 hover:text-zinc-200 backdrop-blur-lg bg-gradient-to-tr from-transparent via-[rgba(121,121,121,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-zinc-400 duration-700">  
                     Logout
                 </button></NavLink>
+
+                <NavLink to='/coding' className="flex items-center gap-2.5 hover:opacity-80 transition-all text-white"><button
+                className="text-zinc-700 hover:text-zinc-200 backdrop-blur-lg bg-gradient-to-tr from-transparent via-[rgba(121,121,121,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-zinc-400 duration-700">  
+                    Back
+                </button></NavLink>
                 </>
             )
         }
