@@ -11,6 +11,7 @@ require('./db/conn');
 app.use(cors());
 app.use(express.json());
 app.use(require('./router/auth'));
+app.use(require('./router/aiRoutes'))
 
 const consoleURL = (req, res, next)=>{
     console.log(`User at URL : localhost:${PORT}${req.url}`);

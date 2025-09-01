@@ -11,6 +11,7 @@ import Errorpage from "./components/Screens/Errorpage";
 import CodingPage from "./components/HomepageScreen/CodingPage";
 import Voice2Text from "./components/Editor/Voice2Text";
 import Image2Text from "./components/Editor/Image2Text";
+import AiPage from "./components/Editor/AiPage";
 
 export const UsedContext = createContext();
 function App() {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/coding" element={<CodingPage/>}/>
           <Route path='/editor/voice2text' element={<Voice2Text/>}/>
           <Route path="/editor/image2text" element={<Image2Text/>} />
+          <Route path="/editor/aipage" element={<AiPage />} />
         </Routes>
       </BrowserRouter>
     </UsedContext.Provider>

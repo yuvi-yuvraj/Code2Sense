@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom'
 import img0 from "../../assets/img0.jpg"
 import img2 from "../../assets/img2.jpg"
 import web from "../../assets/web.jpg"
+import img3 from "../../assets/AIgen.png"
+import img4 from "../../assets/Pythonimg.jpg"
 
 const CodingPage = () => {
   return (
@@ -49,19 +51,36 @@ const CodingPage = () => {
             </div>
           </div>
 
+
           <div className='h-full w-full flex flex-col items-center'>
-          <h1 className='text-6xl font-bold text-lavender pt-24'>Image To Code</h1>
+          <h1 className='text-6xl font-bold text-lavender pt-24'>AI Image Generator</h1>
+        
+            <div className='flex lg:flex-row flex-col gap-28 p-16 justify-center items-center'>
+              <div className='max-w-[600px] object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out hover:brightness-110'>
+              <img src={img3} alt="img2" className='max-h-[430px]'/>
+              </div>
+              <div className='flex flex-col text-white max-w-[580px]'>
+                 <p className='text-white text-2xl'><span className='text-lavender text-2xl font-bold'>"AI image generation" </span>transforms simple text into stunning, realistic, or artistic visuals, blending creativity with <span className='text-lavender text-2xl font-bold'>technology for limitless imagination.</span></p>
+                 <NavLink className="mt-8" to='/editor/aipage'><button className="text-purple-400 hover:text-purple-700 backdrop-blur-lg bg-gradient-to-tr from-transparent via-[rgba(121,121,121,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-purple-700 duration-700">Get Start</button></NavLink>
+              </div>
+              
+            </div>
+          </div>
+
+          <div className='h-full w-full flex flex-col items-center'>
+          <h1 className='text-6xl font-bold text-lavender pt-24'>Python Compiler</h1>
         
             <div className='flex lg:flex-row flex-col gap-28 p-16 justify-center items-center'>
               <div className='flex flex-col text-white max-w-[580px]'>
-                 <p className='text-white text-2xl'><span className='text-lavender text-2xl font-bold'>"Words Speak more than Actions" </span>let this quote get Install into your life by our latest tool <span className='text-lavender text-2xl font-bold'>Voice to Text</span> feature .</p>
-                 <NavLink className="mt-8" to='/coding'><button className="text-purple-400 hover:text-purple-700 backdrop-blur-lg bg-gradient-to-tr from-transparent via-[rgba(121,121,121,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-purple-700 duration-700">Get Start</button></NavLink>
+                 <p className='text-white text-2xl'>Leash out All your<span className='text-lavender text-2xl font-bold'> Logic and Understanding </span>with the Easiest Programming Language <span className='text-lavender text-2xl font-bold'>Python </span>in this Super Easy Web IDE</p>
+                 <NavLink className="mt-8" to='/editor/aipage'><button className="text-purple-400 hover:text-purple-700 backdrop-blur-lg bg-gradient-to-tr from-transparent via-[rgba(121,121,121,0.16)] to-transparent rounded-md py-2 px-6 shadow hover:shadow-purple-700 duration-700">Get Start</button></NavLink>
               </div>
               <div className='max-w-[500px] object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out hover:brightness-110'>
-              <img src={img0} alt="img1" className=''/>
+              <img src={img4} alt="img1" className='max-h-[430px]'/>
               </div>
             </div>
           </div>
+
         </div>
   )
 }
