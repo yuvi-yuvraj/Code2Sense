@@ -1,40 +1,43 @@
 const express = require('express');
-const OpenAI = require('openai'); 
+const { GoogleGenAI } = require('@google/genai'); // Import the GoogleGenAI client
 const router = express.Router();
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 require('dotenv').config();
 require('../db/conn');
-const Post = require('../model/post');
+const Post = require('../model/post'); // Assuming this is still needed
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Initialize the GoogleGenAI client
+// It will automatically look for the GEMINI_API_KEY environment variable.
+const ai = new GoogleGenAI({});
 
 router.post('/editor/aipage', async (req, res) => {
   try {
     const { prompt } = req.body;
 
-    const aiResponse = await openai.images.generate({
-      prompt,
-      n: 1,
-      size: '1024x1024',
-      response_format: 'b64_json',
+    // Use an Imagen model for image generation
+    const aiResponse = await ai.models.generateImages({
+      model: 'imagen-3.0-generate-002', // Use Imagen for image generation
+      prompt: prompt,
+      config: {
+        numberOfImages: 1,
+        outputMimeType: 'image/jpeg', // Example output format
+        aspectRatio: '1:1', // Equivalent to 1024x1024
+      }
     });
 
-    const image = aiResponse.data[0].b64_json;
+    // The generated image data is in aiResponse.generatedImages[0].image.imageBytes
+    const image = aiResponse.generatedImages[0].image.imageBytes; // This is a base64 string
 
     res.status(200).json({ photo: image });
   } catch (error) {
-    console.error('OpenAI Error:', error);
+    console.error('Imagen API Error:', error);
 
-  const message =
-    error?.response?.data?.error?.message ||
-    error?.message ||
-    'Something went wrong';
+    const message =
+      error?.message ||
+      'Something went wrong with the Imagen API';
 
-  res.status(error.status || 500).send(message);
+    res.status(500).send(message);
   }
 });
 
-module.exports = router
+module.exports = router;
