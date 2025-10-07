@@ -29,7 +29,7 @@ const AiPage = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await fetch('http://localhost:5000/editor/aipage', {
+        const response = await fetch('/editor/aipage', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
