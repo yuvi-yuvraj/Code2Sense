@@ -1,13 +1,11 @@
 const express = require('express');
-const { GoogleGenAI } = require('@google/genai'); // Import the GoogleGenAI client
+const { GoogleGenAI } = require('@google/genai'); 
 const router = express.Router();
 
 require('dotenv').config();
 require('../db/conn');
-const Post = require('../model/post'); // Assuming this is still needed
+const Post = require('../model/post'); 
 
-// Initialize the GoogleGenAI client
-// It will automatically look for the GEMINI_API_KEY environment variable.
 const ai = new GoogleGenAI({});
 
 router.post('/editor/aipage', async (req, res) => {

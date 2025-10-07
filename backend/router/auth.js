@@ -8,9 +8,8 @@ require('../db/conn');
 const User = require('../model/userSchema')
 
 router.get('/', (req, res) => {
-    res.send("welcome from the homepage to auth.js");
-    console.log(`User at URL : localhost:${PORT}${req.url}`)
-})
+    res.send('Auth route working');
+});
 
 router.post('/register', async (req, res) => {
     const {username, email, password, cpassword, role} = req.body;
